@@ -68,9 +68,8 @@
                         <div class="col-lg-4 col-md-4 col-xs-6 thumb">
                             <span><b>@Html.DisplayFor(modelItem => item.Quantity)</b> @Html.DisplayFor(modelItem => item.Name) </span>
                             <br />
-                            <a class="thumbnail" href="#">
-                                <img class="plant-image" src="@Url.Content(item.ImageURL)" alt="@Html.DisplayFor(modelItem => item.Name)" />
-                            </a>
+                            <img class="plant-image" src="@Url.Content(item.ImageURL)" alt="@Html.DisplayFor(modelItem => item.Name)" />
+                            <br />
                             <span>Planted on: <b>@Html.DisplayFor(modelItem => item.DatePlanted)</b></span>
                         </div>
                     }

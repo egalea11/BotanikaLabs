@@ -32,11 +32,16 @@ textarea {
 
 /* --- Plants/Index --- */
 .plant-image{
-    height:200px;
-    width:200px;
+    height: 300px;
+    width: 200px;
     
     -ms-transform: rotate(90deg); /* IE 9 */
     -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);
 }
-
+@media screen and (max-width: 425px){
+    .plant-image{
+        height: 120px;
+        width: 100px;
+    }
+}
