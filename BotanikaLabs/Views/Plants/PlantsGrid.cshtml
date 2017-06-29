@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<BotanikaLabs.Models.Plant>
+
 @{
     ViewBag.Title = "PlantsGrid";
     Layout = "~/Views/Shared/_PlantsPageLayout.cshtml";
@@ -56,74 +57,26 @@
             <!-- Page Content -->
             <div class="container">
                 <div class="row">
+                    @* Page Title *@
                     <div class="col-lg-12">
-                        <h1 class="page-header">Thumbnail Gallery</h1>
+                        <h1 class="page-header">Potted Plants and Trees</h1>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-                        </a>
-                    </div>
+
+                    @* items *@
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                            <span><b>@Html.DisplayFor(modelItem => item.Quantity)</b> @Html.DisplayFor(modelItem => item.Name) </span>
+                            <br />
+                            <a class="thumbnail" href="#">
+                                <img class="plant-image" src="@Url.Content(item.ImageURL)" alt="@Html.DisplayFor(modelItem => item.Name)" />
+                            </a>
+                            <span>Planted on: <b>@Html.DisplayFor(modelItem => item.DatePlanted)</b></span>
+                        </div>
+                    }
                 </div>
-                <hr>
             </div>
         </div>
     </div>
 </div>
 <!-- /.container -->
-
