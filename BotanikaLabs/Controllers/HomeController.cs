@@ -13,9 +13,9 @@ namespace BotanikaLabs.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Monitoring()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Pine";
 
             return View();
         }

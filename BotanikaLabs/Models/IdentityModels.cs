@@ -21,7 +21,7 @@ namespace BotanikaLabs.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("BotanikaLabsDB", throwIfV1Schema: false)
         {
         }
 

@@ -278,6 +278,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PlantModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\monitoring\pine_cover.jpg" />
     <Content Include="Images\sample plants\barbados_cherry.jpg" />
     <Content Include="Images\sample plants\blood_orange.jpg" />
     <Content Include="Images\sample plants\dragon_fruit.jpg" />
@@ -366,6 +367,7 @@
     <Content Include="Views\Plants\Index.cshtml" />
     <Content Include="Views\Plants\PlantsGrid.cshtml" />
     <Content Include="Views\Shared\_PlantsPageLayout.cshtml" />
+    <Content Include="Views\Home\Monitoring.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

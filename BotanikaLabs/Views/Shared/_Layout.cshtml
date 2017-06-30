@@ -22,8 +22,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Monitoring", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Monitoring", "Monitoring", "Home")</li>
                         <li>@Html.ActionLink("Plants", "PlantsGrid", "Plants")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     </ul>
@@ -32,15 +31,8 @@
                 </div>
             </div>
         </div>
-        @* full-screen page - logo *@
-        <div class="homepage-header-background">
-            <div id="logo">
-                <img src="~/Images/homepage/botanika.png" height="400px" width="720px">
-            </div>
-            <div class="space-white"></div>
-        </div>
 
-        <div class="container body-content">
+        <div class="container">
             @RenderBody()
             <hr />
             <footer>

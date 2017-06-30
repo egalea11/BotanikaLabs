@@ -32,16 +32,53 @@ textarea {
 
 /* --- Plants/Index --- */
 .plant-image{
-    height: 300px;
-    width: 200px;
+    width: 250px;
     
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-    transform: rotate(90deg);
 }
 @media screen and (max-width: 425px){
     .plant-image{
+        background-size: cover;
         height: 120px;
         width: 100px;
     }
+}
+.plant-body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+.thumb {
+    margin-bottom: 30px;
+}
+
+/* --- layout/userlogin --- */
+@media (min-width: 768px){
+    .navbar-nav > li > a{
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 10px;
+        padding: 5px 10px;
+        transition: 0.5s ease;
+        border-color: #f3f3f3;
+        border-radius: 10px;
+    }
+    .navbar-nav > li > a:hover{
+        background-color: white!important;
+        border: 1px solid #f2f2f2;
+        border-radius: 10px;
+    }
+}
+/* --- monitoring --- */
+
+.pine-header-fill{
+    height: 100%;
+}
+.pine-header {
+    display: block;
+    position: absolute;
+    background: url('../Images/monitoring/pine_cover.jpg') no-repeat center fixed;
+    background-size: cover;
+    width: inherit;
+    height: 100%;
+}
+.monitoring-content{
+    background-color:rgba(0, 0, 0, 0.5);
 }
