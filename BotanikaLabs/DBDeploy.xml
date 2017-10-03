@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DatabaseDeployment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:noNamespaceSchemaLocation="..\packages\OctoPackPlus.DBDeploy.0.0.13\Tools\DBDeploy.xsd"
+                    xmlns="urn:DBDeploy_v001:xml-data">
+  <Databases>
+    <Database Name="ABC" extpropVersion="SchemaVersion" DefaultVersion="1.2.1.0">
+      <DatabaseServer>
+        <Environment Name="DEV"  DBServer=".\SQL2012" />
+        <Environment Name="TEST" DBServer="SQL01T" />
+        <Environment Name="PROD" DBServer="SQL01P" />
+      </DatabaseServer>
+      <SchemaDeployment VersionFrom="1.2.1.0" VersionTo="1.2.1.1">
+        <Rollout>
+          <Script ExecutionOrder="1" Path="abc_1_2_1_1_a_ROLLOUT.sql" CreatesDB="true" />
+          <Script ExecutionOrder="2" Path="abc_1_2_1_1_b_ROLLOUT.sql" />
+        </Rollout>
+        <Rollback>
+          <Script ExecutionOrder="1" Path="abc_1_2_1_1_b_ROLLBACK.sql" />
+          <Script ExecutionOrder="2" Path="abc_1_2_1_1_a_ROLLBACK.sql" />
+        </Rollback>
+      </SchemaDeployment>
+      <SchemaDeployment VersionFrom="1.2.1.1" VersionTo="1.2.1.2">
+        <Rollout>
+          <Script ExecutionOrder="1" Path="ROLLOUT_A.sql" />
+          <Script ExecutionOrder="2" Path="ROLLOUT_A.sql" />
+        </Rollout>
+        <Rollback>
+          <Script ExecutionOrder="1" Path="ROLLBACK.sql" />
+        </Rollback>
+      </SchemaDeployment>
+    </Database>
+    <Database Name="DEF" extpropVersion="SchemaVersion_ABC" DefaultVersion="1.0.0.0">
+      <DatabaseServer>
+        <Environment Name="DEV"  DBServer=".\SQL2012" />
+        <Environment Name="TEST" DBServer="SQL01T" />
+        <Environment Name="PROD" DBServer="SQL01P" />
+      </DatabaseServer>
+      <SchemaDeployment VersionFrom="1.0.0.0" VersionTo="1.0.0.1">
+        <Rollout>
+          <Script ExecutionOrder="1" Path="abc" CreatesDB="true" />
+        </Rollout>
+        <Rollback>
+          <Script ExecutionOrder="1" Path="abc" />
+        </Rollback>
+      </SchemaDeployment>
+    </Database>
+    <Database Name="GHI" extpropVersion="SchemaVersion_GHI" DefaultVersion="0.0.0.0">
+      <DatabaseServer>
+        <Environment Name="DEV"  DBServer=".\SQL2014" />
+        <Environment Name="TEST" DBServer="SQL02T" />
+        <Environment Name="PROD" DBServer="SQL02P" />
+      </DatabaseServer>
+      <SchemaDeployment VersionFrom="0.0.0.0" VersionTo="0.0.0.1">
+        <Rollout>
+          <Script ExecutionOrder="1" Path="GHI_CreateDB.sql" CreatesDB="true" />
+        </Rollout>
+        <Rollback>
+          <Script ExecutionOrder="1" Path="GHI_DropDB.sql" />
+        </Rollback>
+      </SchemaDeployment>
+      <SchemaDeployment VersionFrom="0.0.0.1" VersionTo="0.0.1.0">
+        <Rollout>
+          <Script ExecutionOrder="1" Path="GHI_ROLLOUT_v0_0_1_0.sql" />
+        </Rollout>
+        <Rollback>
+          <Script ExecutionOrder="1" Path="GHI_ROLLBACK_v0_0_1_0.sql" />
+        </Rollback>
+      </SchemaDeployment>
+    </Database>
+  </Databases>
+
+  <Releases>
+    <Release Version="0.0.0.0">
+      <DBSchemaDeployment ExecutionOrder="1" Database="GHI" Version="0.0.0.0" RollbackOnFutureFailures="true" />
+    </Release>
+
+    <Release Version="0.0.0.1">
+      <DBSchemaDeployment ExecutionOrder="1" Database="GHI" Version="0.0.0.1" RollbackOnFutureFailures="true" />
+    </Release>
+
+    <Release Version="0.0.1.0">
+      <DBSchemaDeployment ExecutionOrder="1" Database="GHI" Version="0.0.1.0" RollbackOnFutureFailures="true" />
+    </Release>
+
+    <Release Version="1.5.1.0">
+      <DBSchemaDeployment ExecutionOrder="1" Database="ABC" Version="1.2.1.1" RollbackOnFutureFailures="true" />
+      <DBSchemaDeployment ExecutionOrder="2" Database="DEF" Version="1.0.0.1" RollbackOnFutureFailures="true" />
+      <DBSchemaDeployment ExecutionOrder="3" Database="GHI" Version="0.0.1.0" RollbackOnFutureFailures="true" />
+      <!--
+      <DBSchemaDeployment ExecutionOrder="3" Database="DEF" Version="1.2.1.1" RollbackOnFutureFailures="true" />
+      -->
+    </Release>
+  </Releases>
+
+</DatabaseDeployment>
