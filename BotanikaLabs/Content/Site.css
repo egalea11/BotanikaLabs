@@ -1,13 +1,10 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -29,7 +26,6 @@ textarea {
     background-size: inherit;
 }
 
-
 /* --- Plants/Index --- */
 .plant-image{
     width: 250px;
@@ -47,14 +43,29 @@ textarea {
 }
 
 /* --- layout/userlogin --- */
+.botanika-brand{
+    font-family: 'Harlow Solid';
+    font-size: 30px;
+    color: forestgreen!important;
+    transition: 0.2s linear;
+    text-shadow: 2px 2px #dcdcdc;
+}
+.botanika-brand:hover{
+    text-shadow: -2px -2px #dcdcdc;
+}
+@font-face {
+    font-family: 'callingangels';
+    src: url('../fonts/callingangels.ttf') format('truetype');
+}
+
 @media (min-width: 768px){
     .navbar-nav > li > a{
         display: inline-block;
         vertical-align: middle;
         margin-top: 10px;
         padding: 5px 10px;
-        transition: 0.5s ease;
-        border-color: #f3f3f3;
+        transition: 0.2s ease-in-out;
+        border: 1px solid #f8f8f8;
         border-radius: 10px;
     }
     .navbar-nav > li > a:hover{
@@ -63,19 +74,82 @@ textarea {
         border-radius: 10px;
     }
 }
-/* --- monitoring --- */
+.search-field:focus {
+    border: 1px solid #ccc;
+    outline: none;
+}
+.search-field:focus{
+    box-shadow: none;
+}
 
+.container {
+    width: 95%;
+}
+
+.navbar-nav {
+    margin-bottom: 0;
+}
+@media (min-width: 768px){
+    .navbar-nav{
+        margin-left: 40px;
+    }
+}
+@media (min-width: 1024px){
+    .navbar-nav{
+        margin-left: 80px;
+    }
+}
+.navbar-right{
+    margin-right: 0;
+}
+
+
+
+/* --- monitoring --- */
 .pine-header-fill{
-    height: 100%;
-}
-.pine-header {
     display: block;
-    position: absolute;
-    background: url('../Images/monitoring/pine_cover.jpg') no-repeat center fixed;
-    background-size: cover;
-    width: inherit;
-    height: 100%;
+    margin: auto;
+    margin-top: -80px;
+    width: 100%;
+    transition: 0.2s ease-in-out;
 }
+
 .monitoring-content{
     background-color:rgba(0, 0, 0, 0.5);
+}
+
+button:active{
+    border: none;
+}
+
+.scroll-down{
+    background: url(../Images/monitoring/arrow.gif) no-repeat center center;
+    display: block;
+    margin: auto;
+    margin-top: -3px;
+    width: 5%;
+    padding: 2em;
+    transition: 0.1s ease-in-out;
+    opacity: 0.5;
+}
+
+.scroll-down:hover {
+    margin-top: 3px;
+    opacity: 0.3;
+}
+
+.toggle-view{
+    display: block;
+    text-align: center;
+    border-radius: 0px;
+    border: none;
+}
+
+
+/* LOGIN PAGE */
+.login-page{
+    width: 100%;
+}
+.login-area{
+
 }

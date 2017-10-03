@@ -220,6 +220,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PlantsController.cs" />
@@ -277,6 +278,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PlantModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\monitoring\arrow.gif" />
+    <Content Include="Images\monitoring\goto_arrow.png" />
     <Content Include="Images\monitoring\pine_cover.jpg" />
     <Content Include="Images\sample plants\barbados_cherry.jpg" />
     <Content Include="Images\sample plants\blood_orange.jpg" />
@@ -295,6 +298,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\callingangels.ttf" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Models\PlantModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -345,7 +349,6 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -365,8 +368,11 @@
     <Content Include="Views\Plants\Edit.cshtml" />
     <Content Include="Views\Plants\Index.cshtml" />
     <Content Include="Views\Plants\PlantsGrid.cshtml" />
-    <Content Include="Views\Shared\_PlantsPageLayout.cshtml" />
     <Content Include="Views\Home\Monitoring.cshtml" />
+    <Content Include="Views\Shared\_SideNav.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

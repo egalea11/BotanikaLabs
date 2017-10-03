@@ -22,7 +22,7 @@ namespace BotanikaLabs.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Have you got any questions?";
 
             return View();
         }
