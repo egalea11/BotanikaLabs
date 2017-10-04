@@ -12,7 +12,7 @@ namespace BotanikaLabs.Controllers
 {
     public class PlantsController : Controller
     {
-        private BotanikaLabsDBEntities db = new BotanikaLabsDBEntities();
+        private PlantsModel db = new PlantsModel();
 
         // GET: Plants
         public ActionResult Index()
