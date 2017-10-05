@@ -288,6 +288,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PlantModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\leaf_logo_temp_2_icon.ico" />
     <Content Include="Images\monitoring\arrow.gif" />
     <Content Include="Images\monitoring\goto_arrow.png" />
     <Content Include="Images\monitoring\pine_cover.jpg" />
