@@ -21,7 +21,7 @@ namespace BotanikaLabs.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("BotanikaLabsDB", throwIfV1Schema: false)
+            : base("PlantsModel", throwIfV1Schema: false)
         {
         }
 
